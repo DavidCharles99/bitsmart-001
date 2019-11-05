@@ -1,7 +1,5 @@
-require_relative './config/enviroment'
 
-if ActiveRecord::Migrator.needs_migration?
-  raise 'migrations are pending, run `rake db:migrate`'
-end
+require_relative './config/environment'
 
-use Rack::methodO
+use Rack::MethodOverride
+run Sinatra::Application

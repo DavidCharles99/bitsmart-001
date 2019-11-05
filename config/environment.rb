@@ -1,6 +1,6 @@
 require 'bundler'
 
-bundler.require
+Bundler.require
 
 ActiveRecord::Base.establish_connection(
   :adapter => "sqlite3",
