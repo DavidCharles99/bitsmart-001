@@ -7,6 +7,13 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
+    session[:greeting] = "Hello Mr Charles"
+    response.set_cookie 'credit_amount', '100'
     "Hello World"
+  end
+
+  get '/loggedin' do
+    session[:greeting]
+    "you have #{request.cookies['credit_amount']} credits"
   end
 end
